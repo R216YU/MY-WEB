@@ -1,3 +1,4 @@
+import { Alert } from "@heroui/react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,27 @@ interface DiaryLayoutProps {
 }
 
 const DiaryLayout: React.FC<DiaryLayoutProps> = ({ children }) => {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <BuildingAlert />
+    </>
+  );
 };
 
 export default DiaryLayout;
+
+const BuildingAlert = () => {
+  return (
+    <Alert
+      status="warning"
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 max-w-lg"
+    >
+      <Alert.Indicator />
+      <Alert.Content>
+        <Alert.Title>Building now...</Alert.Title>
+        <Alert.Description>r216yu.xyzは現在作成中です。</Alert.Description>
+      </Alert.Content>
+    </Alert>
+  );
+};

@@ -8,12 +8,14 @@ import { LuIdCard, LuPalette, LuPenTool } from "react-icons/lu";
 interface ButtonItem {
   label: string;
   icon: IconType;
+  disabled?: boolean;
   onClick?: () => void;
   link?: string;
 }
 
 const EntryPoint = () => {
   const { push } = useNavigationStore();
+
   const BUTTONS: ButtonItem[] = [
     {
       label: "About",
@@ -28,6 +30,7 @@ const EntryPoint = () => {
     {
       label: "Diary",
       icon: LuPenTool,
+      disabled: true,
       link: "/diary",
     },
   ];
@@ -49,42 +52,51 @@ const EntryPoint = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-4">
-          {BUTTONS.map(({ label, onClick, link, icon: Icon }, index) => {
-            const content = (
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button className="w-35" {...(!link && { onClick })}>
-                  <Icon className="" />
-                  {label}
-                </Button>
-              </motion.div>
-            );
-            return (
-              <motion.div
-                key={label}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  opacity: {
-                    duration: 0.5,
-                    ease: "easeOut",
-                    delay: 0.2 * index,
-                  },
-                  y: { duration: 0.5, ease: "easeOut", delay: 0.2 * index },
-                }}
-              >
-                {link ? (
-                  <Link href={link} className="block">
-                    {content}
-                  </Link>
-                ) : (
-                  content
-                )}
-              </motion.div>
-            );
-          })}
+          {BUTTONS.map(
+            ({ label, onClick, link, icon: Icon, disabled }, index) => {
+              const content = (
+                <motion.div
+                  whileHover={{
+                    scale: disabled ? 1 : 1.1,
+                    rotate: disabled ? 0 : -2,
+                  }}
+                  whileTap={{ scale: disabled ? 1 : 0.98 }}
+                >
+                  <Button
+                    className="w-35"
+                    {...(!link && { onClick })}
+                    isDisabled={disabled}
+                  >
+                    <Icon className="" />
+                    {label}
+                  </Button>
+                </motion.div>
+              );
+              return (
+                <motion.div
+                  key={label}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    opacity: {
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 0.2 * index,
+                    },
+                    y: { duration: 0.5, ease: "easeOut", delay: 0.2 * index },
+                  }}
+                >
+                  {link && !disabled ? (
+                    <Link href={link} className="block">
+                      {content}
+                    </Link>
+                  ) : (
+                    content
+                  )}
+                </motion.div>
+              );
+            },
+          )}
         </div>
       </div>
     </div>

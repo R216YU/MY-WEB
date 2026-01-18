@@ -10,7 +10,7 @@ motion;
 import React from "react";
 import { LuGithub } from "react-icons/lu";
 
-interface WorksProps {
+interface Works {
   imgPath: string;
   title: string;
   description: React.ReactElement;
@@ -19,7 +19,7 @@ interface WorksProps {
   githubLink?: string;
 }
 
-const WORKS: WorksProps[] = [
+const WORKS: Works[] = [
   {
     imgPath: "/works/my-web.png",
     title: "My Web",
@@ -72,7 +72,7 @@ const Works = () => {
 };
 export default Works;
 
-const AppCard: React.FC<WorksProps> = ({
+const AppCard: React.FC<Works> = ({
   imgPath,
   title,
   description,

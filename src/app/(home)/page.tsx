@@ -16,11 +16,9 @@ const Home = () => {
 
   return (
     <main className="relative min-h-lvh w-full overflow-hidden">
-      <AnimatePresence mode="wait">
-        {current === "EntryPoint" && <EntryPoint />}
-        {current === "AboutMe" && <AboutMe />}
-        {current === "Works" && <Works />}
-      </AnimatePresence>
+      {current === "EntryPoint" && <EntryPoint />}
+      {current === "AboutMe" && <AboutMe />}
+      {current === "Works" && <Works />}
     </main>
   );
 };
