@@ -37,7 +37,7 @@ const LINKS: Link[] = [
 
 const AboutMe = () => {
   return (
-    <div id="AboutMe" className="h-lvh w-full p-8">
+    <div id="AboutMe" className="min-h-lvh w-full p-8">
       <div className="h-full flex flex-col justify-center items-center gap-16">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <motion.div
