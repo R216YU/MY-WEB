@@ -54,7 +54,7 @@ const AboutMe = () => {
             whileTap={{ scale: 0.95, rotate: -5 }}
           >
             <img
-              src="/yukidaruma.jpg"
+              src="/profile/yukidaruma.jpg"
               alt="yukidaruma"
               className="w-48 h-48 mb-8 lg:mb-0 lg:mr-8 border-4 border-amber-100 rounded-md"
             />

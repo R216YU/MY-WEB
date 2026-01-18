@@ -28,6 +28,7 @@ interface RootLayoutProps {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="ja" className="dark" data-theme="dark">
+      <head></head>
       <body className={`${poppins.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
