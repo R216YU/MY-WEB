@@ -11,12 +11,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Node.js witn pnpm
-        uses: pnpm/action-setup@v2.2.2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+      - name: Setup pnpm
+        run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install
-        with:
-          version: 10.27.0
       - name: Build Next.js
         run: pnpm build
       - name: Upload to S3
