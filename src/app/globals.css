@@ -3,8 +3,8 @@
 
 /* custom theme setting */
 body {
-  background: #18181b; /* 目に優しい黒 */
-  color: #e5e7eb; /* 目に優しい白 */
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family:
     var(--font-poppins, Poppins), var(--font-inter, Inter), sans-serif;
 }
