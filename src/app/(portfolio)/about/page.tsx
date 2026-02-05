@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer";
-import { LuGithub, LuInstagram } from "react-icons/lu";
-import { IconType } from "react-icons";
-import { SiQiita } from "react-icons/si";
 import { Button } from "@heroui/react";
+import { motion } from "framer";
 import Link from "next/link";
+import { IconType } from "react-icons";
+import { LuGithub, LuInstagram } from "react-icons/lu";
+import { SiQiita } from "react-icons/si";
 
 interface Link {
   name: string;

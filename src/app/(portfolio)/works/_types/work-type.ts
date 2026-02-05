@@ -6,3 +6,5 @@ interface Works {
   siteLink?: string;
   githubLink?: string;
 }
+
+export default Works;

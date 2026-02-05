@@ -1,9 +1,8 @@
 "use client";
 
-import { Dropdown, Button, Label } from "@heroui/react";
+import { Button, Dropdown, Label } from "@heroui/react";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
-import { LuCheck, LuMenu } from "react-icons/lu";
+import { LuMenu } from "react-icons/lu";
 
 const MENU_ITEMS = [
   {

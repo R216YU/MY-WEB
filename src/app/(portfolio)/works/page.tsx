@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer";
+
 import AppCard from "./_components/WorkCard";
+import Works from "./_types/work-type";
 
 const WORKS: Works[] = [
   {
