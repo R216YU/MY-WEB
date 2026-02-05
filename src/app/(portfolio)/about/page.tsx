@@ -1,5 +1,6 @@
+"use client";
+
 import { motion } from "framer";
-import { ReactElement } from "react";
 import { LuGithub, LuInstagram } from "react-icons/lu";
 import { IconType } from "react-icons";
 import { SiQiita } from "react-icons/si";
@@ -35,7 +36,7 @@ const LINKS: Link[] = [
   },
 ];
 
-const AboutMe = () => {
+const AboutPage = () => {
   return (
     <div id="AboutMe" className="min-h-lvh w-full p-8">
       <div className="h-full flex flex-col justify-center items-center gap-16">
@@ -174,4 +175,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default AboutPage;

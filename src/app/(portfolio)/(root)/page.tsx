@@ -1,7 +1,9 @@
-import { useNavigationStore } from "@/shared/store/navigationStore";
+"use client";
+
 import { Button } from "@heroui/react";
 import { motion } from "framer";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { IconType } from "react-icons";
 import { LuIdCard, LuPalette, LuPenTool } from "react-icons/lu";
 
@@ -13,19 +15,19 @@ interface ButtonItem {
   link?: string;
 }
 
-const EntryPoint = () => {
-  const { push } = useNavigationStore();
+const RootPage = () => {
+  const router = useRouter();
 
   const BUTTONS: ButtonItem[] = [
     {
       label: "About",
       icon: LuIdCard,
-      onClick: () => push("AboutMe"),
+      onClick: () => router.push("/about"),
     },
     {
       label: "Works",
       icon: LuPalette,
-      onClick: () => push("Works"),
+      onClick: () => router.push("/works"),
     },
     {
       label: "Diary",
@@ -103,4 +105,4 @@ const EntryPoint = () => {
   );
 };
 
-export default EntryPoint;
+export default RootPage;

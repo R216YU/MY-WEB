@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import MenuButton from "@/shared/components/MenuButton";
 
 export const metadata: Metadata = {
   title: "R216YU's Web",
@@ -31,6 +32,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
       <head></head>
       <body className={`${poppins.variable} ${inter.variable} antialiased`}>
         {children}
+        <MenuButton />
       </body>
     </html>
   );

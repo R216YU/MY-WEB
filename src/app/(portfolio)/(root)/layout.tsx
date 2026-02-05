@@ -1,4 +1,3 @@
-import BackButton from "@/shared/components/BackButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,12 +10,7 @@ interface HomeLayoutProps {
 }
 
 const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
-  return (
-    <>
-      {children}
-      <BackButton />
-    </>
-  );
+  return <>{children}</>;
 };
 
 export default HomeLayout;
