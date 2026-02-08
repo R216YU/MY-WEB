@@ -5,7 +5,7 @@ import { motion } from "framer";
 import Link from "next/link";
 import { IconType } from "react-icons";
 import { LuGithub, LuInstagram } from "react-icons/lu";
-import { SiQiita } from "react-icons/si";
+import { SiCredly, SiQiita } from "react-icons/si";
 
 interface Link {
   name: string;
@@ -33,6 +33,12 @@ const LINKS: Link[] = [
     url: "https://qiita.com/r216yu",
     icon: SiQiita,
     style: "text-green-400",
+  },
+  {
+    name: "Credly",
+    url: "https://www.credly.com/users/r216yu/badges#credly",
+    icon: SiCredly,
+    style: "text-green-600",
   },
 ];
 
@@ -146,6 +152,7 @@ const AboutPage = () => {
               <li>AWS Certified Solutions Architect - Associate (SAA)</li>
               <li>AWS Certified Developer - Associate (DVA)</li>
               <li>AWS Certified CloudOps Engineer - Associate (SOA)</li>
+              <li>AWS Certified Solutions Architect - Professional (SAP)</li>
             </ul>
           </motion.div>
 
@@ -162,7 +169,10 @@ const AboutPage = () => {
           >
             <h3 className="text-md">2026年中のTODO</h3>
             <ul className="text-sm list-disc list-inside">
-              <li>AWS Certified Solutions Architect - Professional (SAP)</li>
+              <li>
+                <s>AWS Certified Solutions Architect - Professional (SAP)</s>{" "}
+                2026/02/08取得
+              </li>
               <li>AWS Certified DevOps Engineer - Professional (DOP)</li>
               <li>応用情報技術者試験</li>
               <li>Java Silver</li>
