@@ -2,7 +2,6 @@ import { Button, Card, Chip, Link as HeroLink, LinkIcon } from "@heroui/react";
 import NextLink from "next/link";
 import React from "react";
 import { LuGithub } from "react-icons/lu";
-
 import Works from "../_types/work-type";
 
 const AppCard: React.FC<Works> = ({
