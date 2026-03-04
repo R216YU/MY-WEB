@@ -12,33 +12,33 @@ const EducationSection = ({ education }: EducationSectionProps) => {
   return (
     <SectionCard title="学歴">
       {/* モバイル用: カード型スタックレイアウト */}
-      <div className="flex flex-col gap-3 md:hidden text-sm">
+      <div className="flex flex-col gap-3 text-sm md:hidden">
         {education.map((edu) => (
           <div
             key={`mobile-${edu.schoolName}-${edu.startDate}`}
-            className="rounded-lg border border-default-200 p-3"
+            className="border-default-200 rounded-lg border p-3"
           >
-            <div className="text-xs text-default-500 mb-1">
+            <div className="text-default-500 mb-1 text-xs">
               {formatPeriod(edu.startDate, edu.endDate)}
             </div>
             <div className="font-semibold">{edu.schoolName}</div>
-            <div className="text-default-500 text-xs mt-1">{edu.degree}</div>
+            <div className="text-default-500 mt-1 text-xs">{edu.degree}</div>
           </div>
         ))}
       </div>
 
       {/* PC用: テーブルレイアウト */}
-      <div className="hidden md:block overflow-x-auto">
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b-2 border-default-300 bg-default-50">
-              <th className="py-3 px-4 text-left font-semibold text-default-600">
+            <tr className="border-default-300 bg-default-50 border-b-2">
+              <th className="text-default-600 px-4 py-3 text-left font-semibold">
                 期間
               </th>
-              <th className="py-3 px-4 text-left font-semibold text-default-600">
+              <th className="text-default-600 px-4 py-3 text-left font-semibold">
                 学校名
               </th>
-              <th className="py-3 px-4 text-left font-semibold text-default-600">
+              <th className="text-default-600 px-4 py-3 text-left font-semibold">
                 区分
               </th>
             </tr>
@@ -47,13 +47,13 @@ const EducationSection = ({ education }: EducationSectionProps) => {
             {education.map((edu) => (
               <tr
                 key={`${edu.schoolName}-${edu.startDate}`}
-                className="border-b border-default-200 last:border-b-0"
+                className="border-default-200 border-b last:border-b-0"
               >
-                <td className="py-3 px-4 whitespace-nowrap text-default-500">
+                <td className="text-default-500 px-4 py-3 whitespace-nowrap">
                   {formatPeriod(edu.startDate, edu.endDate)}
                 </td>
-                <td className="py-3 px-4">{edu.schoolName}</td>
-                <td className="py-3 px-4">{edu.degree}</td>
+                <td className="px-4 py-3">{edu.schoolName}</td>
+                <td className="px-4 py-3">{edu.degree}</td>
               </tr>
             ))}
           </tbody>

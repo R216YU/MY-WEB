@@ -1,6 +1,6 @@
 const DiaryPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-lvh">
+    <div className="flex h-lvh flex-col items-center justify-center">
       <p>Coming Soon...</p>
     </div>
   );

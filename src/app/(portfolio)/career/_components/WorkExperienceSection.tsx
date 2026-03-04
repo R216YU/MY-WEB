@@ -14,33 +14,33 @@ const WorkExperienceSection = ({
   return (
     <SectionCard title="職歴">
       {/* モバイル用: カード型スタックレイアウト */}
-      <div className="flex flex-col gap-3 md:hidden text-sm">
+      <div className="flex flex-col gap-3 text-sm md:hidden">
         {workExperience.map((work) => (
           <div
             key={`mobile-${work.companyName}-${work.startDate}`}
-            className="rounded-lg border border-default-200 p-3"
+            className="border-default-200 rounded-lg border p-3"
           >
-            <div className="text-xs text-default-500 mb-1">
+            <div className="text-default-500 mb-1 text-xs">
               {formatPeriod(work.startDate, work.endDate)}
             </div>
             <div className="font-semibold">{work.companyName}</div>
-            <div className="text-default-500 text-xs mt-1">{work.position}</div>
+            <div className="text-default-500 mt-1 text-xs">{work.position}</div>
           </div>
         ))}
       </div>
 
       {/* PC用: テーブルレイアウト */}
-      <div className="hidden md:block overflow-x-auto">
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b-2 border-default-300 bg-default-50">
-              <th className="py-3 px-4 text-left font-semibold text-default-600">
+            <tr className="border-default-300 bg-default-50 border-b-2">
+              <th className="text-default-600 px-4 py-3 text-left font-semibold">
                 期間
               </th>
-              <th className="py-3 px-4 text-left font-semibold text-default-600">
+              <th className="text-default-600 px-4 py-3 text-left font-semibold">
                 会社名
               </th>
-              <th className="py-3 px-4 text-left font-semibold text-default-600">
+              <th className="text-default-600 px-4 py-3 text-left font-semibold">
                 職種
               </th>
             </tr>
@@ -49,13 +49,13 @@ const WorkExperienceSection = ({
             {workExperience.map((work) => (
               <tr
                 key={`${work.companyName}-${work.startDate}`}
-                className="border-b border-default-200 last:border-b-0"
+                className="border-default-200 border-b last:border-b-0"
               >
-                <td className="py-3 px-4 whitespace-nowrap text-default-500">
+                <td className="text-default-500 px-4 py-3 whitespace-nowrap">
                   {formatPeriod(work.startDate, work.endDate)}
                 </td>
-                <td className="py-3 px-4">{work.companyName}</td>
-                <td className="py-3 px-4">{work.position}</td>
+                <td className="px-4 py-3">{work.companyName}</td>
+                <td className="px-4 py-3">{work.position}</td>
               </tr>
             ))}
           </tbody>

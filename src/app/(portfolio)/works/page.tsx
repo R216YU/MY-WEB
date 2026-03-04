@@ -8,7 +8,7 @@ import { WORKS } from "./_constants/works-data";
 const WorksPage = () => {
   return (
     <div id="Works" className="min-h-lvh w-full">
-      <div className="flex flex-col justify-center items-center gap-8 p-8">
+      <div className="flex flex-col items-center justify-center gap-8 p-8">
         {WORKS.map((item, index) => (
           <motion.div
             key={item.title}

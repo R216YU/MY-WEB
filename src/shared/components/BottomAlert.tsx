@@ -10,7 +10,7 @@ const BottomAlert = ({ title, description, type }: BottomAlertProps) => {
   return (
     <Alert
       status={type}
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 max-w-lg"
+      className="fixed bottom-4 left-1/2 max-w-lg -translate-x-1/2 transform"
     >
       <Alert.Indicator />
       <Alert.Content>

@@ -39,13 +39,13 @@ const ProfileSection = ({ name, birthday, profile }: ProfileSectionProps) => {
   return (
     <SectionCard title="基本情報">
       {/* モバイル用: スタックレイアウト */}
-      <div className="flex flex-col gap-4 md:hidden text-sm">
+      <div className="flex flex-col gap-4 text-sm md:hidden">
         {items.map((item) => (
           <div key={item.label}>
-            <div className="text-xs font-semibold text-default-500 mb-1">
+            <div className="text-default-500 mb-1 text-xs font-semibold">
               {item.label}
             </div>
-            <div className="rounded-lg bg-default-50 px-3 py-2">
+            <div className="bg-default-50 rounded-lg px-3 py-2">
               {item.value}
             </div>
           </div>
@@ -53,19 +53,19 @@ const ProfileSection = ({ name, birthday, profile }: ProfileSectionProps) => {
       </div>
 
       {/* PC用: テーブルレイアウト */}
-      <table className="hidden md:table w-full text-sm">
+      <table className="hidden w-full text-sm md:table">
         <tbody>
-          <tr className="border-b border-default-200">
-            <th className="w-1/4 py-3 px-4 text-left font-semibold text-default-600 bg-default-50">
+          <tr className="border-default-200 border-b">
+            <th className="text-default-600 bg-default-50 w-1/4 px-4 py-3 text-left font-semibold">
               氏名
             </th>
-            <td className="py-3 px-4">{name}</td>
+            <td className="px-4 py-3">{name}</td>
           </tr>
-          <tr className="border-b border-default-200">
-            <th className="w-1/4 py-3 px-4 text-left font-semibold text-default-600 bg-default-50">
+          <tr className="border-default-200 border-b">
+            <th className="text-default-600 bg-default-50 w-1/4 px-4 py-3 text-left font-semibold">
               生年月日
             </th>
-            <td className="py-3 px-4">
+            <td className="px-4 py-3">
               {formatDate(birthday)}
               <Chip size="sm" variant="soft" className="ml-2">
                 {age}歳
@@ -73,10 +73,10 @@ const ProfileSection = ({ name, birthday, profile }: ProfileSectionProps) => {
             </td>
           </tr>
           <tr>
-            <th className="w-1/4 py-3 px-4 text-left font-semibold text-default-600 bg-default-50 align-top">
+            <th className="text-default-600 bg-default-50 w-1/4 px-4 py-3 text-left align-top font-semibold">
               プロフィール
             </th>
-            <td className="py-3 px-4 leading-relaxed">{profile}</td>
+            <td className="px-4 py-3 leading-relaxed">{profile}</td>
           </tr>
         </tbody>
       </table>

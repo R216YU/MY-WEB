@@ -14,7 +14,7 @@ const AppCard: React.FC<Works> = ({
   githubLink,
 }) => {
   return (
-    <Card className="flex flex-col items-center sm:flex-row w-full max-w-xl mx-auto min-h-38">
+    <Card className="mx-auto flex min-h-38 w-full max-w-xl flex-col items-center sm:flex-row">
       <div className="relative h-35 w-full shrink-0 overflow-hidden rounded-2xl sm:h-30 sm:w-30">
         <img
           alt={title}
@@ -39,7 +39,7 @@ const AppCard: React.FC<Works> = ({
               title
             )}
           </Card.Title>
-          <Card.Description className="whitespace-pre-line text-pretty">
+          <Card.Description className="text-pretty whitespace-pre-line">
             {description}
           </Card.Description>
         </Card.Header>

@@ -67,13 +67,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </Card.Header>
       <Card.Content className="px-6 pb-6">
         {/* モバイル用: スタックレイアウト */}
-        <div className="flex flex-col gap-4 md:hidden text-sm">
+        <div className="flex flex-col gap-4 text-sm md:hidden">
           {detailItems.map((item) => (
             <div key={item.label}>
-              <div className="text-xs font-semibold text-default-500 mb-1">
+              <div className="text-default-500 mb-1 text-xs font-semibold">
                 {item.label}
               </div>
-              <div className="rounded-lg bg-default-50 px-3 py-2">
+              <div className="bg-default-50 rounded-lg px-3 py-2">
                 {item.value}
               </div>
             </div>
@@ -81,27 +81,27 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </div>
 
         {/* PC用: テーブルレイアウト */}
-        <table className="hidden md:table w-full text-sm">
+        <table className="hidden w-full text-sm md:table">
           <tbody>
-            <tr className="border-b border-default-200">
-              <th className="w-1/5 py-3 px-4 text-left font-semibold text-default-600 bg-default-50 align-top">
+            <tr className="border-default-200 border-b">
+              <th className="text-default-600 bg-default-50 w-1/5 px-4 py-3 text-left align-top font-semibold">
                 概要
               </th>
-              <td className="py-3 px-4 leading-relaxed">
+              <td className="px-4 py-3 leading-relaxed">
                 {project.description}
               </td>
             </tr>
-            <tr className="border-b border-default-200">
-              <th className="w-1/5 py-3 px-4 text-left font-semibold text-default-600 bg-default-50 align-top">
+            <tr className="border-default-200 border-b">
+              <th className="text-default-600 bg-default-50 w-1/5 px-4 py-3 text-left align-top font-semibold">
                 担当・役割
               </th>
-              <td className="py-3 px-4 leading-relaxed">{project.role}</td>
+              <td className="px-4 py-3 leading-relaxed">{project.role}</td>
             </tr>
             <tr>
-              <th className="w-1/5 py-3 px-4 text-left font-semibold text-default-600 bg-default-50 align-top">
+              <th className="text-default-600 bg-default-50 w-1/5 px-4 py-3 text-left align-top font-semibold">
                 使用技術
               </th>
-              <td className="py-3 px-4">
+              <td className="px-4 py-3">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Chip key={tech} size="sm" color="accent" variant="soft">

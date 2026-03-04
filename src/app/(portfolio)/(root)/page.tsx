@@ -44,7 +44,7 @@ const RootPage = () => {
 
   return (
     <div id="EntryPoint" className="h-lvh w-full">
-      <div className="h-full flex flex-col justify-center items-center gap-16">
+      <div className="flex h-full flex-col items-center justify-center gap-16">
         <div className="flex flex-col items-center gap-8">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ const RootPage = () => {
           </motion.h1>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col gap-4 lg:flex-row">
           {BUTTONS.map(
             ({ label, onClick, link, icon: Icon, disabled }, index) => {
               const content = (
