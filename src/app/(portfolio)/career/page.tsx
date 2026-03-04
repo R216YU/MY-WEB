@@ -47,7 +47,7 @@ const CareerPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <h1 className="text-2xl font-bold tracking-wide">経歴書</h1>
+          <h1 className="text-2xl font-bold tracking-wide">経歴</h1>
         </motion.div>
 
         {sections.map((section, i) => (

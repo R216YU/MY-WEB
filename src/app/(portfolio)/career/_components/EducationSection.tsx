@@ -11,7 +11,24 @@ type EducationSectionProps = {
 const EducationSection = ({ education }: EducationSectionProps) => {
   return (
     <SectionCard title="学歴">
-      <div className="overflow-x-auto">
+      {/* モバイル用: カード型スタックレイアウト */}
+      <div className="flex flex-col gap-3 md:hidden text-sm">
+        {education.map((edu) => (
+          <div
+            key={`mobile-${edu.schoolName}-${edu.startDate}`}
+            className="rounded-lg border border-default-200 p-3"
+          >
+            <div className="text-xs text-default-500 mb-1">
+              {formatPeriod(edu.startDate, edu.endDate)}
+            </div>
+            <div className="font-semibold">{edu.schoolName}</div>
+            <div className="text-default-500 text-xs mt-1">{edu.degree}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* PC用: テーブルレイアウト */}
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b-2 border-default-300 bg-default-50">

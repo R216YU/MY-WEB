@@ -13,7 +13,24 @@ const WorkExperienceSection = ({
 }: WorkExperienceSectionProps) => {
   return (
     <SectionCard title="職歴">
-      <div className="overflow-x-auto">
+      {/* モバイル用: カード型スタックレイアウト */}
+      <div className="flex flex-col gap-3 md:hidden text-sm">
+        {workExperience.map((work) => (
+          <div
+            key={`mobile-${work.companyName}-${work.startDate}`}
+            className="rounded-lg border border-default-200 p-3"
+          >
+            <div className="text-xs text-default-500 mb-1">
+              {formatPeriod(work.startDate, work.endDate)}
+            </div>
+            <div className="font-semibold">{work.companyName}</div>
+            <div className="text-default-500 text-xs mt-1">{work.position}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* PC用: テーブルレイアウト */}
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b-2 border-default-300 bg-default-50">

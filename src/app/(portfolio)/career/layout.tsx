@@ -3,7 +3,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "R216YU's Web - Career",
-  description: "r216yuのキャリア情報です。",
+  description: "r216yuの経歴情報です。",
 };
 
 type CareerLayoutProps = {

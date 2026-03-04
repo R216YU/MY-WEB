@@ -14,9 +14,46 @@ type ProfileSectionProps = {
 const ProfileSection = ({ name, birthday, profile }: ProfileSectionProps) => {
   const age = calculateAge(birthday);
 
+  const items = [
+    {
+      label: "氏名",
+      value: <span>{name}</span>,
+    },
+    {
+      label: "生年月日",
+      value: (
+        <span>
+          {formatDate(birthday)}
+          <Chip size="sm" variant="soft" className="ml-2">
+            {age}歳
+          </Chip>
+        </span>
+      ),
+    },
+    {
+      label: "プロフィール",
+      value: <span className="leading-relaxed">{profile}</span>,
+    },
+  ];
+
   return (
     <SectionCard title="基本情報">
-      <table className="w-full text-sm">
+      {/* モバイル用: スタックレイアウト */}
+      <div className="flex flex-col gap-4 md:hidden text-sm">
+        {items.map((item) => (
+          <div key={item.label}>
+            <div className="text-xs font-semibold text-default-500 mb-1">
+              {item.label}
+            </div>
+            <div className="rounded-lg bg-default-50 px-3 py-2">
+              {item.value}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* PC用: テーブルレイアウト */}
+      <table className="hidden md:table w-full text-sm">
         <tbody>
           <tr className="border-b border-default-200">
             <th className="w-1/4 py-3 px-4 text-left font-semibold text-default-600 bg-default-50">

@@ -34,6 +34,29 @@ type ProjectCardProps = {
 
 /** 個別のプロジェクト経歴カード */
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
+  const detailItems = [
+    {
+      label: "概要",
+      value: <span className="leading-relaxed">{project.description}</span>,
+    },
+    {
+      label: "担当・役割",
+      value: <span className="leading-relaxed">{project.role}</span>,
+    },
+    {
+      label: "使用技術",
+      value: (
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <Chip key={tech} size="sm" color="accent" variant="soft">
+              {tech}
+            </Chip>
+          ))}
+        </div>
+      ),
+    },
+  ];
+
   return (
     <Card variant="secondary" className="w-full">
       <Card.Header>
@@ -43,7 +66,22 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </Card.Title>
       </Card.Header>
       <Card.Content className="px-6 pb-6">
-        <table className="w-full text-sm">
+        {/* モバイル用: スタックレイアウト */}
+        <div className="flex flex-col gap-4 md:hidden text-sm">
+          {detailItems.map((item) => (
+            <div key={item.label}>
+              <div className="text-xs font-semibold text-default-500 mb-1">
+                {item.label}
+              </div>
+              <div className="rounded-lg bg-default-50 px-3 py-2">
+                {item.value}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* PC用: テーブルレイアウト */}
+        <table className="hidden md:table w-full text-sm">
           <tbody>
             <tr className="border-b border-default-200">
               <th className="w-1/5 py-3 px-4 text-left font-semibold text-default-600 bg-default-50 align-top">

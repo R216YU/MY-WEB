@@ -23,7 +23,7 @@ export const careerData = {
   ],
   workExperience: [
     {
-      companyName: "株式会社 LasFactory",
+      companyName: "株式会社 XXX", // 非公開
       position: "システム開発",
       startDate: "2024-04",
       endDate: "--",
