@@ -1,5 +1,6 @@
-import BottomAlert from "@/shared/components/BottomAlert";
 import type { Metadata } from "next";
+
+import BottomAlert from "@/shared/components/BottomAlert";
 
 export const metadata: Metadata = {
   title: "R216YU's Web - Diary",

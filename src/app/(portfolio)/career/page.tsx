@@ -2,12 +2,11 @@
 
 import { motion } from "framer";
 
-import { careerData } from "./_constants/career-data";
-
 import EducationSection from "./_components/EducationSection";
 import ProfileSection from "./_components/ProfileSection";
 import ProjectHistorySection from "./_components/ProjectHistorySection";
 import WorkExperienceSection from "./_components/WorkExperienceSection";
+import { careerData } from "./_constants/career-data";
 
 /** セクションごとのスライドインアニメーション設定 */
 const slideUpVariants = {
