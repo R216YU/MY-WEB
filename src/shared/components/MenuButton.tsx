@@ -30,6 +30,7 @@ const MENU_ITEMS = [
 const MenuButton = () => {
   const router = useRouter();
   const pathname = usePathname();
+
   const handleClick = (href: string) => {
     router.push(href);
   };
@@ -38,12 +39,13 @@ const MenuButton = () => {
     return null;
   }
 
-  const CustomCheckmarkIcon = (
+  const CustomCheckmarkIcon = (href?: string) => (
     <svg
       height="16"
       viewBox="0 0 16 16"
       width="16"
       xmlns="http://www.w3.org/2000/svg"
+      data-testid={`checkmark-icon-${href}`}
     >
       <path
         className="text-accent"
@@ -62,6 +64,7 @@ const MenuButton = () => {
         variant="primary"
         isIconOnly
         className="fixed right-2 bottom-2"
+        data-testid="menu-button"
       >
         <LuMenu className="text-amber-100" />
       </Button>
@@ -75,7 +78,9 @@ const MenuButton = () => {
                 onClick={() => handleClick(item.href)}
               >
                 <Dropdown.ItemIndicator>
-                  {pathname === item.href ? CustomCheckmarkIcon : null}
+                  {pathname === item.href
+                    ? CustomCheckmarkIcon(item.href)
+                    : null}
                 </Dropdown.ItemIndicator>
                 <Label>{item.label}</Label>
               </Dropdown.Item>
