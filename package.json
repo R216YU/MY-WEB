@@ -8,7 +8,8 @@
     "start": "next start",
     "test": "vitest",
     "lint": "eslint --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@heroui/react": "3.0.0-beta.8",
@@ -34,6 +35,7 @@
     "eslint-config-next": "16.1.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",

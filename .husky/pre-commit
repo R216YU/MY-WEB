@@ -1,0 +1,17 @@
+echo "pnpm lintを実行中..."
+if ! pnpm lint; then
+  echo ""
+  echo "pnpm lintに失敗しました。"
+  echo "エラーを修正してから再度コミットしてください。"
+  exit 1
+fi
+
+echo "pnpm testを実行中..."
+if ! pnpm test; then
+  echo ""
+  echo "pnpm testに失敗しました。"
+  echo "テストを修正してから再度コミットしてください。"
+  exit 1
+fi
+
+echo "すべてのチェックが通りました。コミットを続行します。"
