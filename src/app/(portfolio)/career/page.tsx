@@ -1,26 +1,12 @@
 "use client";
 
-import { motion } from "framer";
+import { FadeIn, SlideUp } from "@/shared/components/animations";
 
 import EducationSection from "./_components/EducationSection";
 import ProfileSection from "./_components/ProfileSection";
 import ProjectHistorySection from "./_components/ProjectHistorySection";
 import WorkExperienceSection from "./_components/WorkExperienceSection";
 import { careerData } from "./_constants/career-data";
-
-/** セクションごとのスライドインアニメーション設定 */
-const slideUpVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  }),
-};
 
 const CareerPage = () => {
   const sections = [
@@ -41,24 +27,14 @@ const CareerPage = () => {
   return (
     <div id="Career" className="min-h-lvh w-full p-4 sm:p-8">
       <div className="mx-auto flex max-w-4xl flex-col gap-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
+        <FadeIn duration={1.0}>
           <h1 className="text-2xl font-bold tracking-wide">経歴</h1>
-        </motion.div>
+        </FadeIn>
 
         {sections.map((section, i) => (
-          <motion.div
-            key={section.key}
-            custom={i}
-            variants={slideUpVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <SlideUp key={section.key} delay={i * 0.15}>
             {section}
-          </motion.div>
+          </SlideUp>
         ))}
       </div>
     </div>

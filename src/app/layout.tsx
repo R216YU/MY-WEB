@@ -3,7 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 
-import MenuButton from "@/shared/components/MenuButton";
+import MenuButton from "@/shared/components/MenuButton/MenuButton";
 
 export const metadata: Metadata = {
   title: "R216YU's Web",
@@ -23,11 +23,11 @@ const inter = Inter({
   display: "swap",
 });
 
-interface RootLayoutProps {
+type RootLayoutProps = {
   children: React.ReactNode;
-}
+};
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="ja" className="dark" data-theme="dark">
       <head></head>

@@ -1,19 +1,20 @@
 "use client";
 
 import { Button } from "@heroui/react";
-import { motion } from "framer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { IconType } from "react-icons";
 import { LuIdCard, LuPalette, LuPenTool } from "react-icons/lu";
 
-interface ButtonItem {
+import { FadeIn, FocusZoom, SlideUp } from "@/shared/components/animations";
+
+type ButtonItem = {
   label: string;
   icon: IconType;
   disabled?: boolean;
   onClick?: () => void;
   link?: string;
-}
+};
 
 const RootPage = () => {
   const router = useRouter();
@@ -46,29 +47,18 @@ const RootPage = () => {
     <div id="EntryPoint" className="h-lvh w-full">
       <div className="flex h-full flex-col items-center justify-center gap-16">
         <div className="flex flex-col items-center gap-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              opacity: { duration: 0.5, ease: "easeOut" },
-              y: { duration: 0.5, ease: "easeOut" },
-            }}
-          >
-            <span className="text-5xl lg:text-7xl">r216yu.xyz</span>
-          </motion.h1>
+          <FadeIn duration={1.0}>
+            <h1>
+              <span className="text-5xl lg:text-7xl">r216yu.xyz</span>
+            </h1>
+          </FadeIn>
         </div>
 
         <div className="flex flex-col gap-4 lg:flex-row">
           {BUTTONS.map(
             ({ label, onClick, link, icon: Icon, disabled }, index) => {
               const content = (
-                <motion.div
-                  whileHover={{
-                    scale: disabled ? 1 : 1.1,
-                    rotate: disabled ? 0 : -2,
-                  }}
-                  whileTap={{ scale: disabled ? 1 : 0.98 }}
-                >
+                <FocusZoom scale={disabled ? 1 : 1.1}>
                   <Button
                     className="w-35"
                     {...(!link && { onClick })}
@@ -77,22 +67,10 @@ const RootPage = () => {
                     <Icon className="" />
                     {label}
                   </Button>
-                </motion.div>
+                </FocusZoom>
               );
               return (
-                <motion.div
-                  key={label}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    opacity: {
-                      duration: 0.5,
-                      ease: "easeOut",
-                      delay: 0.2 * index,
-                    },
-                    y: { duration: 0.5, ease: "easeOut", delay: 0.2 * index },
-                  }}
-                >
+                <SlideUp key={label} delay={0.2 * index}>
                   {link && !disabled ? (
                     <Link href={link} className="block">
                       {content}
@@ -100,7 +78,7 @@ const RootPage = () => {
                   ) : (
                     content
                   )}
-                </motion.div>
+                </SlideUp>
               );
             },
           )}

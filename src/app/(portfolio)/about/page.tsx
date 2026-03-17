@@ -1,19 +1,20 @@
 "use client";
 
 import { Button } from "@heroui/react";
-import { motion } from "framer";
 import Link from "next/link";
 import { IconType } from "react-icons";
 import { LuGithub, LuInstagram } from "react-icons/lu";
 import { SiCredly, SiQiita } from "react-icons/si";
 
-interface Link {
+import { SlideUp } from "@/shared/components/animations";
+
+type Link = {
   name: string;
   url: string;
   icon: IconType;
   style: string;
   disabled?: boolean;
-}
+};
 
 const LINKS: Link[] = [
   {
@@ -47,36 +48,14 @@ const AboutPage = () => {
     <div id="AboutMe" className="min-h-lvh w-full p-8">
       <div className="flex h-full flex-col items-center justify-center gap-16">
         <div className="flex flex-col items-center justify-center lg:flex-row">
-          <motion.div
-            initial={{ scale: 0.6, rotate: -15, opacity: 0 }}
-            animate={{ scale: 1.1, rotate: 5, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 900,
-              damping: 12,
-              bounce: 0.8,
-              duration: 0.45,
-            }}
-            whileHover={{ scale: 1.15, rotate: 0 }}
-            whileTap={{ scale: 0.95, rotate: -5 }}
-          >
+          <SlideUp>
             <img
               src="/profile/yukidaruma.jpg"
               alt="yukidaruma"
               className="mb-8 h-48 w-48 rounded-md border-4 border-amber-100 lg:mr-8 lg:mb-0"
             />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 80,
-              damping: 12,
-              delay: 0.5,
-              duration: 0.5,
-            }}
-          >
+          </SlideUp>
+          <SlideUp delay={0.5}>
             <h2 className="text-2xl">Ryu Suzuki</h2>
             <p className="mb-4 text-sm">Web Developer/Gamer</p>
             <p className="mb-4 text-base">
@@ -109,21 +88,11 @@ const AboutPage = () => {
                 ),
               )}
             </div>
-          </motion.div>
+          </SlideUp>
         </div>
 
         <div className="flex flex-col gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 80,
-              damping: 12,
-              delay: 0.7,
-              duration: 0.5,
-            }}
-          >
+          <SlideUp delay={0.7}>
             <h3 className="text-md">スキルスタック</h3>
             <ul className="list-inside list-disc text-sm">
               <li>言語: TypeScript(JS), Python, Java</li>
@@ -133,19 +102,9 @@ const AboutPage = () => {
               </li>
               <li>クラウド: AWS</li>
             </ul>
-          </motion.div>
+          </SlideUp>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 80,
-              damping: 12,
-              delay: 0.9,
-              duration: 0.5,
-            }}
-          >
+          <SlideUp delay={0.9}>
             <h3 className="text-md">所有資格</h3>
             <ul className="list-inside list-disc text-sm">
               <li>AWS Certified Cloud Practitioner (CLF)</li>
@@ -154,19 +113,9 @@ const AboutPage = () => {
               <li>AWS Certified CloudOps Engineer - Associate (SOA)</li>
               <li>AWS Certified Solutions Architect - Professional (SAP)</li>
             </ul>
-          </motion.div>
+          </SlideUp>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 80,
-              damping: 12,
-              delay: 1.1,
-              duration: 0.5,
-            }}
-          >
+          <SlideUp delay={1.1}>
             <h3 className="text-md">2026年中のTODO</h3>
             <ul className="list-inside list-disc text-sm">
               <li>
@@ -178,7 +127,7 @@ const AboutPage = () => {
               <li>Java Silver</li>
               <li>Java Gold</li>
             </ul>
-          </motion.div>
+          </SlideUp>
         </div>
       </div>
     </div>
