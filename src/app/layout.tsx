@@ -3,7 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 
-import MenuButton from "@/shared/components/MenuButton";
+import MenuButton from "@/shared/components/MenuButton/MenuButton";
 
 export const metadata: Metadata = {
   title: "R216YU's Web",
