@@ -1,8 +1,9 @@
 "use client";
 
+import { SlideUp } from "@/shared/components/animations";
+
 import AppCard from "./_components/WorkCard";
 import { WORKS } from "./_constants/works-data";
-import { SlideUp } from "@/shared/components/animations";
 
 const WorksPage = () => {
   return (

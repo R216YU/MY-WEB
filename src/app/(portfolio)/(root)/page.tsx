@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { IconType } from "react-icons";
 import { LuIdCard, LuPalette, LuPenTool } from "react-icons/lu";
+
 import { FadeIn, FocusZoom, SlideUp } from "@/shared/components/animations";
 
 type ButtonItem = {

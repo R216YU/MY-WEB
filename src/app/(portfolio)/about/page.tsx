@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { LuGithub, LuInstagram } from "react-icons/lu";
 import { SiCredly, SiQiita } from "react-icons/si";
+
 import { SlideUp } from "@/shared/components/animations";
 
 type Link = {
