@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description: "r216yuのDiaryです。日々の日記を綴っています。",
 };
 
-interface DiaryLayoutProps {
+type DiaryLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const DiaryLayout = ({ children }: DiaryLayoutProps) => {
   return (

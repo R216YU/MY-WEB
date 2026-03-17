@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   description: "r216yuのポートフォリオサイトです。",
 };
 
-interface HomeLayoutProps {
+type HomeLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const HomeLayout = ({ children }: HomeLayoutProps) => {
   return <>{children}</>;

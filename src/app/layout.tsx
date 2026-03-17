@@ -23,9 +23,9 @@ const inter = Inter({
   display: "swap",
 });
 
-interface RootLayoutProps {
+type RootLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
