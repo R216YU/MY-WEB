@@ -27,7 +27,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="ja" className="dark" data-theme="dark">
       <head></head>

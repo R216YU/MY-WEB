@@ -9,7 +9,7 @@ interface HomeLayoutProps {
   children: React.ReactNode;
 }
 
-const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
+const HomeLayout = ({ children }: HomeLayoutProps) => {
   return <>{children}</>;
 };
 

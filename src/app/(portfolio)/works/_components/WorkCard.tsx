@@ -5,14 +5,14 @@ import { LuGithub } from "react-icons/lu";
 
 import Works from "../_types/work-type";
 
-const AppCard: React.FC<Works> = ({
+const AppCard = ({
   imgPath,
   title,
   description,
   tags,
   siteLink,
   githubLink,
-}) => {
+}: Works) => {
   return (
     <Card className="mx-auto flex min-h-38 w-full max-w-xl flex-col items-center sm:flex-row">
       <div className="relative h-35 w-full shrink-0 overflow-hidden rounded-2xl sm:h-30 sm:w-30">

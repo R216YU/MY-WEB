@@ -11,7 +11,7 @@ interface DiaryLayoutProps {
   children: React.ReactNode;
 }
 
-const DiaryLayout: React.FC<DiaryLayoutProps> = ({ children }) => {
+const DiaryLayout = ({ children }: DiaryLayoutProps) => {
   return (
     <>
       {children}
