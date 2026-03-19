@@ -13,7 +13,7 @@ describe("RootPage", () => {
     expect(screen.getByText("r216yu.xyz")).toBeDefined();
     expect(screen.getByText("About")).toBeDefined();
     expect(screen.getByText("Works")).toBeDefined();
-    expect(screen.getByText("Career")).toBeDefined();
+
     expect(screen.getByText("Diary")).toBeDefined();
   });
 });

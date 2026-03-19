@@ -35,7 +35,7 @@ describe("MenuButton", () => {
     expect(screen.getByText("Home")).toBeInTheDocument();
     expect(screen.getByText("About")).toBeInTheDocument();
     expect(screen.getByText("Works")).toBeInTheDocument();
-    expect(screen.getByText("Career")).toBeInTheDocument();
+
     expect(screen.getByText("Diary")).toBeInTheDocument();
   });
 

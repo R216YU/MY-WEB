@@ -17,10 +17,7 @@ const MENU_ITEMS = [
     label: "Works",
     href: "/works",
   },
-  {
-    label: "Career",
-    href: "/career",
-  },
+
   {
     label: "Diary",
     href: "/diary",

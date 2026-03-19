@@ -30,11 +30,7 @@ const RootPage = () => {
       icon: LuPalette,
       onClick: () => router.push("/works"),
     },
-    {
-      label: "Career",
-      icon: LuIdCard,
-      onClick: () => router.push("/career"),
-    },
+
     {
       label: "Diary",
       icon: LuPenTool,
